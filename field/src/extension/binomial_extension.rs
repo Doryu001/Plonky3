@@ -1,5 +1,4 @@
 use alloc::format;
-use alloc::string::ToString;
 use alloc::vec::Vec;
 use core::array;
 use core::fmt::{self, Debug, Display, Formatter};
@@ -367,7 +366,7 @@ where
                 .filter(|(_, x)| !x.is_zero())
                 .map(|(i, x)| match (i, x.is_one()) {
                     (0, _) => format!("{x}"),
-                    (1, true) => "X".to_string(),
+                    (1, true) => format!("X"),
                     (1, false) => format!("{x} X"),
                     (_, true) => format!("X^{i}"),
                     (_, false) => format!("{x} X^{i}"),
