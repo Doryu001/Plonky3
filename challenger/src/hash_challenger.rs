@@ -40,7 +40,8 @@ where
         self.output_buffer = output.to_vec();
 
         // Chaining values.
-        self.input_buffer.extend(output.to_vec());
+        self.input_buffer
+            .extend(self.output_buffer.iter().cloned());
     }
 }
 
